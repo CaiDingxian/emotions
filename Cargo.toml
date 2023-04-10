@@ -1,0 +1,23 @@
+[package]
+name = "gtk-one"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "gif_paintable"
+path = "main.rs"
+required-features = ["image"]
+
+#需要watch -n 1 sccache -s
+#[build]
+#rustc-wrapper = "~/.cargo/bin/sccache"
+
+[dependencies]
+#gdk-wayland = { git = "http://github.com/gtk-rs/gtk4-rs.git", package = "gdk4-wayland" }
+gtk = { version = "0.6.4", package = "gtk4", features = ["v4_8"]}
+# used by gif-paintable example
+image = "0.24"
+reqwest = { version = "0.11.16", features = ["json","blocking"] }
+#tokio = { version = "1", features = ["full"] }
