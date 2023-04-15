@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+    <gresource prefix="/resources/">
+        <file compressed="true">estyle.css</file>
+        <file>iconfont.otf</file>
+        <file>iconfont.ttf</file>
+        <file compressed="true">exit.png</file>
+    </gresource>
+</gresources>

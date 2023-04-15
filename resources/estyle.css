@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: "iconfont";
+    font-weight:normal;
+    font-style: normal;
+    src: url("/resources/iconfont.otf") format('opentype');
+}
+.material-symbols-outlined {
+    font-family: "iconfont";
+    font-weight:normal;
+    font-style: normal;
+    font-size: 16pt;
+    /*font-size: 16px;*/
+}
+
+
+.txt {
+    color: cornflowerblue;
+    font-size: 50px;
+}
+.head-bar{
+
+    background-color: cornflowerblue;
+}
+
+.close-button{
+    border: none;
+    background: url("./exit.png");
+    color: white;
+    box-shadow: none;
+}
+
+.close-button:hover{
+    color: #ccc;
+}
+
+window{
+    border: none;
+    border-radius: 0px 0px;
+}
+
+decoration,.decoration{
+    border: 2px cornflowerblue solid;
+}
+
+window.background{
+    border: none;
+}
+
+.GtkHeaderBar,.headerbar,headerbar{
+    padding: 0;
+    margin: 0;
+    border-radius: 0px 0px;
+    border: 2px solid cornflowerblue;
+    background-color: cornflowerblue;
+}
+
+windowcontrols.start{
+    background-color: cornflowerblue;
+    color: white;
+}
+.windowhandle,windowhandle{
+    color: white;
+    background-color: cornflowerblue;
+}
+.windowcontrols,windowcontrols{
+    background-color: cornflowerblue;
+    /*visibility: hidden;*/
+}
+.box.start,box.start,windowcontrols.end,.windowcontrols.end,box.end,end{
+    background-color: cornflowerblue;
+}
+
+/*headerbar*/
+/*╰── windowhandle*/
+/*╰── box*/
+/*├── box.start*/
+/*│   ├── windowcontrols.start*/
+/*│   ╰── [other children]*/
+/*├── [Title Widget]*/
+/*╰── box.end*/
+/*├── [other children]*/
+/*╰── windowcontrols.end*/
+
+.image-grid{
+    background-color: white;
+    /*border: 5px solid crimson;*/
+}
+
+
+

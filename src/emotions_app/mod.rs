@@ -8,6 +8,11 @@ use gtk::{gdk, glib};
 
 use crate::gif_paintable_window::GifPaintableWindow;
 use gtk::prelude::{ApplicationExt, ApplicationExtManual};
+mod app;
+mod domain;
+mod infra;
+mod core;
+mod start;
 
 pub struct EmotionsApp {}
 
@@ -17,6 +22,7 @@ impl EmotionsApp {
     //也有人说 OpenGL 驱动程序通过将 GPU 的内存映射到它们的内存空间来玩一些技巧，然后内核将其计为额外内存。
     //受影响的不是 RAM，所有变化都是一个数字。
     pub fn start() -> glib::ExitCode {
+
         // gdk::set_allowed_backends("wayland");
         let application = gtk::Application::new(Some("com.voidgeek.emotions"), Default::default());
 
