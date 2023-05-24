@@ -1,1 +1,2 @@
-mod emotion_search_client_imp;
+pub mod emotion_finder_client;
+pub use emotion_finder_client::*;

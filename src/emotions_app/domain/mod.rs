@@ -1,11 +1,7 @@
-
-struct ImageInfo{
-    url:String
+pub struct ImageInfo {
+    pub(crate) url: String,
 }
 
-trait SearchClient{
-
-    fn search(){
-
-    }
+pub trait SearchClient {
+    fn search() {}
 }

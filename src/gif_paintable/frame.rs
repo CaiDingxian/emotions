@@ -8,6 +8,19 @@ pub struct Frame {
     pub frame_duration: Duration,
 }
 
+impl Clone for Frame {
+    fn clone(&self) -> Self {
+        Frame {
+            texture: self.texture.clone(),
+            frame_duration: self.frame_duration.clone(),
+        }
+    }
+}
+
+unsafe impl Sync for Frame {}
+
+unsafe impl Send for Frame {}
+
 impl From<image::Frame> for Frame {
     fn from(f: image::Frame) -> Self {
         let mut frame_duration = Duration::from(f.delay());

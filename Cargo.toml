@@ -2,14 +2,14 @@
 name = "gtk-one"
 version = "0.1.0"
 edition = "2021"
-
+subsystem = "windows"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [[bin]]
-name = "gif_paintable"
-path = "main.rs"
-required-features = ["image"]
-
+name = "gtk-one"
+path = "./src/main.rs"
+#required-features = ["image"]
+subsystem = "windows"
 #需要watch -n 1 sccache -s
 #[build]
 #rustc-wrapper = "~/.cargo/bin/sccache"
@@ -37,7 +37,7 @@ serde_json = { version = "1.0"}
 #infer = {version="0.13.0"}
 #opener = {version="0.5.2"}
 #url = {version="2.3.1"}
-reqwest = { version = "0.11.16", features = ["json","blocking"] }
+reqwest = { version = "0.11.16", features = ["json","blocking","gzip"] }
 image = "0.24"
 urlencoding = "2.1.2"
 
@@ -46,3 +46,7 @@ glib-build-tools = "0.17.0"
 # used by gif-paintable example
 
 #tokio = { version = "1", features = ["full"] }
+
+[profile.release]
+opt-level = 'z'
+lto = true

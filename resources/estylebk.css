@@ -12,14 +12,14 @@
     font-family: "iconfont";
     font-weight:normal;
     font-style: normal;
-    font-size: 1rem;
-    /*font-size: 16rem;*/
+    font-size: 16pt;
+    /*font-size: 16px;*/
 }
 
 .search-box
 {
     font-weight: lighter;
-    font-size: 1rem;
+    font-size: 16px;
     background-color: white;
     /*border-radius: 4pt;*/
     margin: 0pt 0pt 10pt 0pt ;
@@ -27,22 +27,22 @@
 
 .txt {
     color: cornflowerblue;
-    font-size: 3rem;
+    font-size: 50px;
 }
 .title-label{
-    font-size: 1rem;
+    font-size: 16px;
 }
 .header-box{
-    height:1.3rem;
+    height:20px;
     background-color: cornflowerblue;
 }
 
 .close-button{
     position: absolute;
-    right: 0.7rem;
+    right: 10px;
     border: none;
-    width: 1rem;
-    height: 1rem;
+    width: 16px;
+    height: 16px;
     background: url("./exit.png") no-repeat;
     background-size: contain;
     color: white;
@@ -57,7 +57,7 @@
 window{
     border: none;
     border-radius: 5px 5px;
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 decoration,.decoration{
@@ -71,7 +71,7 @@ window.background{
 .GtkHeaderBar,.headerbar,headerbar{
     padding: 0;
     margin: 0;
-    border-radius: 0rem 0rem;
+    border-radius: 0px 0px;
     border: 2px solid cornflowerblue;
     background-color: cornflowerblue;
 }
@@ -106,7 +106,7 @@ windowcontrols.start{
 
 .image-grid{
     background-color: white;
-    /*border: 5rem solid crimson;*/
+    /*border: 5px solid crimson;*/
 }
 
 

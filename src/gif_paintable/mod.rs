@@ -1,9 +1,11 @@
 mod frame;
 mod imp;
 
+use std::error::Error;
 use std::io::Cursor;
 
-use frame::Frame;
+use crate::emotions_app::core::*;
+pub use frame::Frame;
 use gtk::prelude::*;
 use gtk::subclass::prelude::*;
 use gtk::{gdk, glib};
@@ -22,7 +24,9 @@ impl GifPaintable {
     ///
     /// The loading consists of decoding the gif with a GIFDecoder, then storing
     /// the frames so that the paintable can render them.
-    pub fn load_from_bytes(&self, bytes: &[u8]) -> Result<(), Box<dyn std::error::Error>> {
+    ///
+    ///
+    pub fn load_from_frames(&self, frames: Vec<Frame>) -> Result<(), Box<dyn std::error::Error>> {
         let imp = self.imp();
         imp.current_idx.set(0);
 
@@ -30,6 +34,15 @@ impl GifPaintable {
             source_id.remove();
         }
 
+        imp.frames.replace(Some(frames));
+
+        // make sure the first frame is queued to play
+        self.setup_next_frame();
+
+        Ok(())
+    }
+
+    pub fn decode_to_frames(bytes: &[u8]) -> Result<Vec<Frame>, CommonError> {
         let read = Cursor::new(bytes);
 
         // Images from unknown origins make a program vulnerable to
@@ -43,21 +56,17 @@ impl GifPaintable {
         //
         // An safety measure to guard against that would be to process each
         // frame as needed instead of loading them all with `collect_frames()`.
-        let decoder = GifDecoder::new(read)?;
+        let decoder = GifDecoder::new(read)
+            .map_err(|e| CommonError::new(ErrorType::ParingError, None, None))?;
 
         let frames = decoder
             .into_frames()
-            .collect_frames()?
+            .collect_frames()
+            .map_err(|e| CommonError::new(ErrorType::ParingError, None, None))?
             .into_iter()
             .map(Frame::from)
             .collect::<Vec<Frame>>();
-
-        imp.frames.replace(Some(frames));
-
-        // make sure the first frame is queued to play
-        self.setup_next_frame();
-
-        Ok(())
+        Ok(frames)
     }
 
     fn setup_next_frame(&self) {
