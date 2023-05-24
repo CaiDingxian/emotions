@@ -2,6 +2,8 @@
 
 一个PC端动态表情包软件，基于GTK4-RS 
 
+测试版下载链接： https://github.com/CaiDingxian/emotions/releases/tag/test-version
+
 ![image](https://github.com/CaiDingxian/emotions/assets/37413956/6db492ef-450a-4830-801f-4342f0620604)
 
 
