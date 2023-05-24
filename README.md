@@ -2,11 +2,6 @@
 
 一个PC端动态表情包软件，基于GTK4-RS 
 
-测试版下载链接： https://github.com/CaiDingxian/emotions/releases/tag/test-version
-
-![image](https://github.com/CaiDingxian/emotions/assets/37413956/6db492ef-450a-4830-801f-4342f0620604)
-
-
 ## 基本功能特点
 
 1.不需要安装，打开能直接使用
@@ -16,6 +11,21 @@
 3.图片自动加载到软件目录下的emo_res文件中，可以任意复制或删除。
 
 4.图片来自网络，不做过度限制与过滤，保留聊天原始的乐趣
+
+
+
+<image src="https://github.com/CaiDingxian/emotions/assets/37413956/3ba035dd-a344-4b18-9f87-007898f2d41d" width="60%"/>
+
+
+<br>
+<br>
+
+测试版下载： https://github.com/CaiDingxian/emotions/releases/tag/test-version
+
+
+<br>
+<br>
+
 
 ## 规划中的功能
 
