@@ -65,7 +65,7 @@
 
 基于MinGW和Gtk4-rs，环境配置可见gtk4-rs官方文档
 
-理论上支持跨多端。当前只在windows上测试过。（Linux理论上能用）
+理论上支持跨多端。当前只在windows和Linux上测试过。（Mac理论上能用）
 
 目前Gtk原生剪贴板对windows的gif复制无效，所以代码中的剪贴板使用了Windows-rs的api
 
